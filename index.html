@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/globalStyles.css">
+    <link rel="stylesheet" href="./src/styles/modal.css">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <title>TechPosters</title>
+</head>
+<body>
+    <nav>
+        <span>TechPosters</span>
+        <button>Sair</button>
+    </nav>
+    <main>
+        <section class="postAndSugestions">
+            <form action="">
+                <div class="formTitle">
+                    <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                    <div class="formInfo">
+                        <p>Samuel Leão</p>
+                        <span>Front End Engineer</span>
+                    </div>
+                </div>
+                <input type="text" placeholder="Digitar título do post">
+                <input type="text" id="inputTextArea" placeholder="Digitar descrição do post">
+                <button type="submit" id="postBtn">Postar</button>
+            </form>
+            <section class="sugestions">
+                <span class="sugestionsMainTitle">Sugestões para você seguir</span>
+                <section class="sugestionsContainer">
+                    <div class="sugestionsCard">
+                        <div class="sugestionsCardTitle">
+                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <div class="cardInfo">
+                                <p>Samuel Leão</p>
+                                <span>Front End Engineer</span>
+                            </div>
+                        </div>
+                        <button class="followed">Seguindo</button>
+                    </div>
+                    <div class="sugestionsCard">
+                        <div class="sugestionsCardTitle">
+                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <div class="cardInfo">
+                                <p>Samuel Leão</p>
+                                <span>Front End Engineer</span>
+                            </div>
+                        </div>
+                        <button class="unfollowed">Seguir</button>
+                    </div>
+                    <div class="sugestionsCard">
+                        <div class="sugestionsCardTitle">
+                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <div class="cardInfo">
+                                <p>Samuel Leão</p>
+                                <span>Front End Engineer</span>
+                            </div>
+                        </div>
+                        <button class="unfollowed">Seguir</button>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section class="feed">
+            <span class="feedTitle">Posts</span>
+        </section>
+    </main>
+    <script src="./src/scripts/users.js"></script>
+    <script src="./src/scripts/sugestUsers.js"></script>
+    <script src="./src/scripts/posts.js"></script>
+    <script src="./src/scripts/index.js"></script>
+</body>
+</html>
