@@ -363,3 +363,9 @@ form{
         height: 3.25rem;
     }  
 }
+
+@media(min-width: 2200px){
+    .feed{
+        width: 60%;
+    }
+}
