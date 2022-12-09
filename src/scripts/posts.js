@@ -23,3 +23,80 @@ const posts = [
     text: "A Programação Funcional é uma orientação focada na programação declarativa. Conhecendo mais a programação funcional a partir de códigos podemos nos deparar de primeira com o conceito mais central da programação funcional, que é o conceito de funções puras, isso significa que o retorno de uma função deve depender apenas dos seus parâmetros de entrada. Com classes podemos editar os valores das propriedades dos objetos criados ou ainda criar métodos para essas propriedades, ainda por cima podemos definir se vão ser públicos (vão para o objeto) ou estáticos (não são instanciados, ou seja, não vão para o objeto), e isso tem seu lado bom e ruim.",
   },
 ];
+
+function renderPosts(){
+  let cont = 25;
+  const postBoxContainer = document.querySelector(".postCardContainer")
+  posts.forEach(element => {
+    const divPostCard = document.createElement("div");
+    const divPostCardTitle = document.createElement("div");
+    const cardTitleImg = document.createElement("img");
+    const cardTitleInfo = document.createElement("div");
+    const cardUser = document.createElement("p");
+    const cardOffice = document.createElement("span");
+    const divPostContent = document.createElement("div");
+    const postTitle = document.createElement("span");
+    const postText = document.createElement("p");
+    const divCardFooter = document.createElement("div");
+    const abrirPostBtn = document.createElement("button");
+    const likeBotao = document.createElement("button");
+    const botaoImg = document.createElement("img");
+
+
+    divPostCard.classList.add("postCard");
+    divPostCard.id = `post${element.id_post}`;
+    divPostCardTitle.classList.add("postCardTitle");
+    cardTitleImg.classList.add("userMiniature");
+    cardTitleImg.src = `./src/assets/img/user${element.user}.svg`
+    cardTitleInfo.classList.add("cardInfo");
+    cardUser.innerText = `${users[element.user-1].user}`
+    cardOffice.innerText = `${users[element.user-1].stack}`
+    divPostContent.classList.add("postContent");
+    postTitle.innerText = `${element.title}`;
+    postText.innerText = `${element.text}`;
+    divCardFooter.classList.add("postFooter");
+    abrirPostBtn.classList.add("openPost");
+    likeBotao.classList.add("likeBtn");
+    abrirPostBtn.innerText = "Abrir Post"
+    abrirPostBtn.dataset.id = element.id_post;
+    botaoImg.src = "./src/assets/img/Vector.svg"
+    likeBotao.innerText = cont;
+    cont = cont - 7;
+     
+    let troca = false;
+
+    function trocaImagem(){
+      if (troca === true) {
+        botaoImg.src = "./src/assets/img/Vector.svg"
+      } else {
+        botaoImg.src = "./src/assets/img/VectorLike.svg"
+      }
+      troca = !troca;
+    }
+
+    likeBotao.addEventListener("mouseover", (event) => {
+      trocaImagem();
+    })
+
+    likeBotao.addEventListener("mouseout", (event) => {
+      trocaImagem();
+    })
+
+    botaoImg.addEventListener("click", (event) => {
+      trocaImagem();
+    })
+
+    postBoxContainer.appendChild(divPostCard);
+    divPostCard.appendChild(divPostCardTitle);
+    divPostCardTitle.appendChild(cardTitleImg);
+    divPostCardTitle.appendChild(cardTitleInfo);
+    cardTitleInfo.append(cardUser, cardOffice);
+    divPostCard.appendChild(divPostContent);
+    divPostContent.append(postTitle, postText);
+    divPostCard.appendChild(divCardFooter);
+    divCardFooter.append(abrirPostBtn, likeBotao);
+    likeBotao.appendChild(botaoImg);
+  });
+}
+
+renderPosts();

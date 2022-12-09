@@ -18,6 +18,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 nav > button{
@@ -48,14 +49,13 @@ main{
 }
 
 form{
-    display: flex;
-    flex-direction: column;
-
+    display: inline-block;
     padding: 3rem 1.25rem;
     gap: 1.625rem;
+    width: 100%;
 }
 
-.formTitle, .sugestionsCardTitle{
+.formTitle, .sugestionsCardTitle, .postCardTitle{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -84,7 +84,13 @@ form{
     color: var(--color-grey-2);
 }
 
-form > input, textarea{
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer > input, textarea{
+    margin-top: 1.625rem;
     padding: 1rem 1.25rem;
     border-radius: 0.25rem;
     border: solid 2px var(--color-grey-4);
@@ -93,21 +99,21 @@ form > input, textarea{
     resize: none;
 }
 
-form > input:hover, textarea:hover{
+.inputContainer > input:hover, textarea:hover{
     border: solid 2px var(--color-primary);
 }
 
-form > input::-webkit-input-placeholder{
+.inputContainer > input::-webkit-input-placeholder{
     font-size: var(--size-text-2);
     font-weight: 400;
     color: var(--color-grey-3);
 }
 
 #inputTextArea{
-    height: 130px;
+    height: 8.125rem;
 }
 
-form > button{
+.inputContainer > button{
     width: 4.313rem;
     align-self: flex-end;
     background-color: var(--color-grey-4);
@@ -117,11 +123,7 @@ form > button{
     color: var(--color-grey-3);
     font-weight: 600;
     font-size: var(--size-text-2);
-}
-
-.postAndSugestions{
-    display: flex;
-    flex-direction: column;
+    margin-top: 1.625rem;
 }
 
 .sugestionsMainTitle{
@@ -134,12 +136,10 @@ form > button{
     display: flex;
     flex-direction: column;
     overflow-x: auto;
-    gap: 3.75rem;
     padding: 3rem 1.25rem;
     width: 100%;
     height: auto;
-    
-    
+
 }
 
 .sugestionsContainer{
@@ -148,6 +148,8 @@ form > button{
     width: 100%;
     height: auto;
     gap: 3.75rem;
+    margin-top: 3.75rem;
+
 }
 
 .sugestionsCard{
@@ -196,6 +198,7 @@ form > button{
 
 .feed{
     padding: 3rem 1.25rem;
+    height: auto;
 }
 
 .feedTitle{
@@ -204,43 +207,117 @@ form > button{
     font-size: var(--size-title-1);
 }
 
+.postCardContainer{
+    padding-top: 3.25rem;
+}
+
+.postCard{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 3.125rem;
+}
+
+.postContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: auto;
+}
+
+.postContent > span{
+    font-weight: 700;
+    font-size: var(--size-title-1);
+    line-height: 2.5rem;
+
+    color: var(--color-grey-1);
+
+    width: 100%;
+}
+
+.postContent > p {
+    font-weight: 400;
+    font-size: var(--size-text-1);
+    line-height: 1.75rem;
+    
+    color: var(--color-grey-2);
+    height: 7.5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.postFooter{
+    display: flex;
+    flex-direction: row;
+
+    gap: 2rem;
+}
+
+.openPost{
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.25rem;
+    border: none;
+
+    background-color: var(--color-grey-1);
+    color: var(--color-white-fixed);
+    font-weight: 600;
+    font-size: var(--size-text-2);
+}
+
+.openPost:hover{
+    background-color: var(--color-grey-0);
+}
+
+.likeBtn{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    background-color: var(--color-white-fixed);
+
+    font-weight: 400;
+    font-size: var(--size-text-2);
+
+}
+
 @media(min-width: 900px){
     nav{
         padding: 1.875rem 6.25rem;
     }
 
     form{
-        width: 44.688rem;
-        padding: 4.375rem 6.25rem;
-    }
-
-    .postAndSugestions{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: inline-block;
+        width: 60%;
+        max-width: 44.688rem;
+        height: auto;
+        padding-left: 6.25rem;
+        position: relative;
+        top: -17.5rem;
     }
 
     .sugestionsContainer{
         display: flex;
         flex-direction: column;
+        gap: 3.75rem;
     }
 
     .sugestions{
-        width: 26.563rem;
+        display: inline-block;
+        width: 30%;
+        max-width: 30rem;
         gap: 3.75rem;
-        padding-top: 3.75rem;
-        margin-right: 3.75rem;
-
+        height: 100%;
         position: sticky;
-        top: 10px;
-    }
-
-    .sugestionsContainer{
-        gap: 3.75rem;
+        top: 6.25rem;
+        margin-left: 5rem;
+    
     }
 
     .sugestionsCard{
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .sugestionsCard > button{
@@ -249,5 +326,26 @@ form > button{
 
     .feed{
         padding: 3.125rem 6.25rem ;
+        width: 44.688rem;
+        position: relative;
+        top: -12.5rem;
+    }
+
+    .postCardContainer{
+        width: 100%;
+    }
+
+    .postCard{
+        width: 95%;
+    }
+
+    .postContent > p {
+        height: 3.25rem;
+    }  
+}
+
+@media(min-width: 1400px){
+    .sugestions{
+        margin-left: 19%;
     }
 }

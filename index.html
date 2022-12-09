@@ -15,62 +15,83 @@
         <button>Sair</button>
     </nav>
     <main>
-        <section class="postAndSugestions">
-            <form action="">
-                <div class="formTitle">
-                    <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
-                    <div class="formInfo">
-                        <p>Samuel Leão</p>
-                        <span>Front End Engineer</span>
-                    </div>
+        <form action="">
+            <div class="formTitle">
+                <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                <div class="formInfo">
+                    <p>Samuel Leão</p>
+                    <span>Front End Engineer</span>
                 </div>
+            </div>
+            <div class="inputContainer">
                 <input type="text" placeholder="Digitar título do post">
                 <input type="text" id="inputTextArea" placeholder="Digitar descrição do post">
                 <button type="submit" id="postBtn">Postar</button>
-            </form>
-            <section class="sugestions">
+            </div>
+        </form>
+            <aside class="sugestions">
                 <span class="sugestionsMainTitle">Sugestões para você seguir</span>
                 <section class="sugestionsContainer">
                     <div class="sugestionsCard">
                         <div class="sugestionsCardTitle">
-                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <img class="userMiniature" src="./src/assets/img/user3.svg" alt="">
                             <div class="cardInfo">
-                                <p>Samuel Leão</p>
-                                <span>Front End Engineer</span>
+                                <p>Carlos Lima</p>
+                                <span>UX e UI Designer</span>
                             </div>
                         </div>
                         <button class="followed">Seguindo</button>
                     </div>
                     <div class="sugestionsCard">
                         <div class="sugestionsCardTitle">
-                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <img class="userMiniature" src="./src/assets/img/user6.svg" alt="">
                             <div class="cardInfo">
-                                <p>Samuel Leão</p>
-                                <span>Front End Engineer</span>
+                                <p>Larissa Camargo</p>
+                                <span>UI Developer</span>
                             </div>
                         </div>
                         <button class="unfollowed">Seguir</button>
                     </div>
                     <div class="sugestionsCard">
                         <div class="sugestionsCardTitle">
-                            <img class="userMiniature" src="./src/assets/img/user1.svg" alt="">
+                            <img class="userMiniature" src="./src/assets/img/user7.svg" alt="">
                             <div class="cardInfo">
-                                <p>Samuel Leão</p>
-                                <span>Front End Engineer</span>
+                                <p>Filipe Gutierry</p>
+                                <span>Full Stack Developer</span>
                             </div>
                         </div>
                         <button class="unfollowed">Seguir</button>
                     </div>
                 </section>
-            </section>
-        </section>
+            </aside>
         <section class="feed">
             <span class="feedTitle">Posts</span>
+            <div class="postCardContainer">
+            
+            </div>
         </section>
+        <!-- <section class="modalBoxContainer">
+            <div class="modalCard">
+                <div class="postCardTitle">
+                    <img class="userMiniature" src="./src/assets/img/user2.svg" alt="">
+                        <div class="cardInfo">
+                            <p>Samuel Persuhn</p>
+                            <span>Front End Engineer</span>
+                        </div>
+                    <button class="closeBtn">X</button>   
+                </div>
+                <div class="modalPostContent">
+                    <span>O que é programação orientada a objetos e programação funcional</span>
+                    <p>A Programação Funcional é uma orientação focada na programação declarativa. Conhecendo mais a programação funcional a partir de códigos podemos nos deparar de primeira com o conceito mais central da programação funcional, que é o conceito de funções puras, isso significa que o retorno de uma função deve depender apenas dos seus parâmetros de entrada. Com classes podemos editar os valores das propriedades dos objetos criados ou ainda criar métodos para essas propriedades, ainda por cima podemos definir se vão ser públicos (vão para o objeto) ou estáticos (não são instanciados, ou seja, não vão para o objeto), e isso tem seu lado bom e ruim.</p>
+                </div>
+            </div>
+        </section> -->
+        <dialog class="modalContainer"></dialog>
     </main>
     <script src="./src/scripts/users.js"></script>
-    <script src="./src/scripts/sugestUsers.js"></script>
     <script src="./src/scripts/posts.js"></script>
+    <script src="./src/scripts/modal.js"></script>
+    <script src="./src/scripts/sugestUsers.js"></script>
     <script src="./src/scripts/index.js"></script>
 </body>
 </html>
