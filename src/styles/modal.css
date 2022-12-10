@@ -1,4 +1,7 @@
 .modalBoxContainer{
+    z-index: 3;
+}
+.modalBoxContainer{
     position: fixed;
     top: 0;
     left: 0;
@@ -18,10 +21,11 @@
     flex-direction: column;
     background-color: var(--color-white-fixed);
     width: 90%;
-    height: auto;
+    height: 90%;
     border-radius: 0.5rem;
     padding: 2.5rem 1.5rem;
     gap: 2.125rem;
+    overflow-y: scroll;
 
     position: relative;
 
@@ -74,9 +78,15 @@
     background-color: var(--color-grey-5);
 }
 
+@media(min-width: 767px){
+    .modalCard{
+        height: auto;
+    }
+}
 @media(min-width: 900px){
     .modalCard{
         max-width: 47.815rem;
         margin-top: -9.375rem;
+        height: auto;
     }
 }
